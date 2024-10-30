@@ -6,9 +6,56 @@
     ;
 }
 
+html {
+    --elastic: cubic-bezier(0.01, 0.71, 0.16, 1.23);
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
 article {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin: 5% 10%;
+    margin: 5% 20%;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    height: 50px;
+    width: 210px;
+    border-radius: 1.5rem;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    bottom: 5%;
+    background-color: #1e1e1e;
+    transform: translate(-50%, -7%);
+    box-shadow: 0 5px 2rem rgb(0 0 0 / 0.4);
+    transition-property: height, width;
+    transition-duration: 200ms;
+    transition-timing-function: var(--elastic);
+
+    .links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+
+        a {
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                opacity: 0.4;
+            }
+        }
+    }
+}
+
+.progress.on {
+    height: 250px;
+    width: 300px;
+    justify-content: space-between;
 }
