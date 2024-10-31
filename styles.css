@@ -2,12 +2,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "rasa", sans-serif;
-    ;
+    font-family: "quinn-text", sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
 }
 
 html {
-    --elastic: cubic-bezier(0.01, 0.71, 0.16, 1.23);
+    --elastic: ease-in-out 0.08s;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
 }
@@ -15,14 +18,21 @@ html {
 article {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin: 5% 20%;
+    gap: 40px;
+    margin: 3% 20%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .progress {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 1%;
     height: 50px;
     width: 210px;
@@ -32,26 +42,39 @@ article {
     left: 50%;
     bottom: 5%;
     background-color: #1e1e1e;
-    transform: translate(-50%, -7%);
+    transform: translate(-50%, -5%);
     box-shadow: 0 5px 2rem rgb(0 0 0 / 0.4);
     transition-property: height, width;
-    transition-duration: 200ms;
+    transition-duration: 133ms;
     transition-timing-function: var(--elastic);
+    cursor: pointer;
+    overflow: hidden;
+}
 
-    .links {
-        flex-direction: column;
-        display: none;
-        width: 100%;
+.links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    gap: 8px;
+    transition: opacity 0.75s ease;
+}
 
-        a {
-            color: white;
-            text-decoration: none;
+.progress.on .links {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
 
-            &:hover {
-                opacity: 0.4;
-            }
-        }
-    }
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+.links a:hover {
+    opacity: 0.4;
 }
 
 .progress.on {
