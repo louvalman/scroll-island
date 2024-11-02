@@ -13,9 +13,14 @@ window.addEventListener('click', (event) => {
 });
 
 window.onscroll = () => {
-  const totalHeight = document.body.scrollHeight - window.innerHeight;
-  const y = window.scrollY;
-  const res = ((y / totalHeight) * 100).toFixed(0);
-  percentElement.textContent = `${Math.min(Number(res), 100)}%`;
-  /*   progressEl.style.setProperty("--t", `${Number(res) / 100}turn`); */
+  const maxScrollableDistance = document.body.scrollHeight - window.innerHeight;
+  const currentScrollPosition = window.scrollY;
+  const scrollPercentage = (
+    (currentScrollPosition / maxScrollableDistance) *
+    100
+  ).toFixed(0);
+
+  percentElement.textContent = `${Math.min(Number(scrollPercentage), 100)}%`;
+
+  /* progressEl.style.setProperty("--rotation", `${Number(scrollPercentage) / 100}turn`); */
 };

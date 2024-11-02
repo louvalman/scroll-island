@@ -32,6 +32,7 @@ section p {
     font-size: 1.1em;
     line-height: 1.75em;
     font-weight: 100;
+    color: #1e1e1e;
 }
 
 .progress {
@@ -41,7 +42,6 @@ section p {
     flex-direction: column;
     padding: 1%;
     height: 48px;
-    /* Default height */
     width: 200px;
     border-radius: 1.5rem;
     position: fixed;
@@ -49,8 +49,7 @@ section p {
     left: 50%;
     bottom: 5%;
     background-color: #1e1e1e;
-    transform: translate(-50%, 0);
-    /* No vertical translation */
+    transform: translate(-50%, 5%);
     box-shadow: 0 5px 2rem rgb(0 0 0 / 0.4);
     transition: height 160ms var(--elastic), width 160ms var(--elastic);
     cursor: pointer;
@@ -88,14 +87,12 @@ section p {
 }
 
 .overview-display {
-    width: calc(100% - 10%);
+    width: calc(100% - 11%);
     color: white;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    /* Keep it in a fixed position within the progress */
     bottom: 10px;
-    /* Adjust as needed */
 }
 
 .index {
