@@ -1,3 +1,10 @@
+:root {
+    --elastic: cubic-bezier(0.77, 0, 0.18, 1);
+    --primary-color: #1e1e1e;
+    --light-color: white;
+    --padding-size: 1%;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -10,7 +17,6 @@ h1 {
 }
 
 html {
-    --elastic: ease-in-out 0.08s;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
 }
@@ -37,10 +43,9 @@ section p {
 
 .progress {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 1%;
+    padding: var(--padding-size);
     height: 48px;
     width: 200px;
     border-radius: 1.5rem;
@@ -48,10 +53,10 @@ section p {
     z-index: 2;
     left: 50%;
     bottom: 5%;
-    background-color: #1e1e1e;
+    background-color: var(--primary-color);
     transform: translate(-50%, 5%);
-    box-shadow: 0 5px 2rem rgb(0 0 0 / 0.4);
-    transition: height 160ms var(--elastic), width 160ms var(--elastic);
+    box-shadow: 0 5px 2rem rgba(0, 0, 0, 0.4);
+    transition: height 233ms var(--elastic), width 233ms var(--elastic);
     cursor: pointer;
     overflow: hidden;
 }
@@ -59,7 +64,6 @@ section p {
 .progress.on {
     height: 250px;
     width: 300px;
-    justify-content: space-between;
 }
 
 .links {
@@ -69,7 +73,7 @@ section p {
     visibility: hidden;
     width: 100%;
     gap: 8px;
-    transition: opacity 750ms ease;
+    transition: opacity 233ms ease 233ms;
 }
 
 .progress.on .links {
@@ -78,7 +82,7 @@ section p {
 }
 
 .links a {
-    color: white;
+    color: var(--light-color);
     text-decoration: none;
 }
 
@@ -88,7 +92,7 @@ section p {
 
 .overview-display {
     width: calc(100% - 11%);
-    color: white;
+    color: var(--light-color);
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -103,10 +107,13 @@ section p {
 
 .index i {
     font-size: 18px;
-    transition: transform 0.33s;
 }
 
-.progress.on .index i {
+.iconoir-nav-arrow-up {
+    transition: transform 0.100s;
+}
+
+.progress.on .index .iconoir-nav-arrow-up {
     transform: rotate(180deg);
 }
 
@@ -114,14 +121,20 @@ section p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: var(--light-color);
     border-radius: 64px;
-    color: black;
+    color: var(--primary-color);
     width: 48px;
     height: 28px;
+    font-weight: 800;
+}
 
-    p {
-        margin-top: -2px;
-        font-weight: 800;
+@media only screen and (max-width: 600px) {
+    article {
+        margin: 3% 10%;
+    }
+
+    .progress {
+        padding: 5%;
     }
 }

@@ -2,7 +2,8 @@ const progress = document.querySelector('.progress');
 const links = document.querySelector('.links');
 const percentElement = document.querySelector('.percentage');
 
-progress.addEventListener('click', () => {
+progress.addEventListener('click', (event) => {
+  event.stopPropagation();
   progress.classList.toggle('on');
 });
 
@@ -12,15 +13,12 @@ window.addEventListener('click', (event) => {
   }
 });
 
-window.onscroll = () => {
+window.addEventListener('scroll', () => {
   const maxScrollableDistance = document.body.scrollHeight - window.innerHeight;
   const currentScrollPosition = window.scrollY;
-  const scrollPercentage = (
-    (currentScrollPosition / maxScrollableDistance) *
+  const scrollPercentage = Math.min(
+    (currentScrollPosition / maxScrollableDistance) * 100,
     100
   ).toFixed(0);
-
-  percentElement.textContent = `${Math.min(Number(scrollPercentage), 100)}%`;
-
-  /* progressEl.style.setProperty("--rotation", `${Number(scrollPercentage) / 100}turn`); */
-};
+  percentElement.textContent = `${scrollPercentage}`;
+});
