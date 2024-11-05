@@ -20,5 +20,5 @@ window.addEventListener('scroll', () => {
     (currentScrollPosition / maxScrollableDistance) * 100,
     100
   ).toFixed(0);
-  percentElement.textContent = `${scrollPercentage}`;
+  percentElement.textContent = `${scrollPercentage}%`;
 });
