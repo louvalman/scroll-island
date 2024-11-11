@@ -105,6 +105,10 @@ section p {
     gap: 6px;
 }
 
+.line-fill {
+    transition: width 0.075s ease-in-out;
+}
+
 .index i {
     font-size: 18px;
 }
