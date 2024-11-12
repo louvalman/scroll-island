@@ -137,4 +137,8 @@ section p {
     article {
         margin: 3% 10%;
     }
+
+    .progress {
+        padding: 3%;
+    }
 }
