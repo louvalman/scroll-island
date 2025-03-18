@@ -52,7 +52,7 @@ section p {
     position: fixed;
     z-index: 2;
     left: 50%;
-    bottom: 5%;
+    bottom: 2.5%;
     background-color: var(--primary-color);
     transform: translate(-50%, 5%);
     box-shadow: 0 5px 2rem rgba(0, 0, 0, 0.4);
