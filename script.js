@@ -25,7 +25,7 @@ window.addEventListener('scroll', () => {
   // Display scroll percentage in percentageElement
   percentElement.textContent = `${scrollPercentage}%`;
 
-  // Fill lines in display bassed on scroll percentage
+  // Fill lines in display based on scroll percentage
   const maxWidths = [20, 20, 10];
   const totalLines = maxWidths.length;
   const progressPerLine = 100 / totalLines;
